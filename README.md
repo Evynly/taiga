@@ -12,7 +12,7 @@ This repo provides a wizard to install and configure Taiga on Ubuntu with cloudf
 ```
 2. Run `wizard` script
 ```
-> bash scripts/wizard.sh
+> sudo bash scripts/wizard.sh
 ```
 
 It will prompt for your root domain name, your taiga domain name, and your Cloudflare api token.  
@@ -22,6 +22,6 @@ It will install docker, setup everything (including certs, traefik, PostgreSQL, 
 3. Create super user
 
 ```
-> bash scripts/manage.py createsuperuser
+> sudo bash scripts/manage.py createsuperuser
 ```
 This is based on [kanzitelli's awesome starter for taiga](https://github.com/starters-dev/taiga) which is based on the original [Taiga docker repo](https://github.com/kaleidos-ventures/taiga-docker)
