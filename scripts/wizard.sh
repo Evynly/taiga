@@ -39,7 +39,7 @@ echo -e "${yel}Generating .env file using randomly generated passwords..."
 
 echo "# [SYSTEM]" > .env
 echo "DOMAIN_NAME=${DNS_DOMAIN}" >> .env
-echo "DO_AUTH_TOKEN=XXXXXXXXXXXXXXXX" >> .env
+echo "CLOUDFLARE_DNS_API_TOKEN=${CF_API_TOKEN}" >> .env
 echo "" >> .env
 echo "# [TAIGA]" >> .env
 echo "TAIGA_SECRET_KEY=${TAIGA_SECRET_KEY}" >> .env
