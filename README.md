@@ -20,7 +20,14 @@ This repo provides a wizard to install and configure Taiga on Ubuntu with cloudf
 > sudo bash scripts/wizard.sh
 ```
 It will prompt for your root domain name (i.e. domain.com), your taiga domain name (i.e. taiga.domain.com), and your Cloudflare api token (40 character string).  
+
 It will generate random passwords as necessary (a .env file is generated that is used by additional scripts).  
+```
+Note - if you already have a .env file it will be overwritten
+If this is the case, you can modify the wizard script to append rather than overwrite by changing > to >> in the first command that writes to the file
+Alternatively you can back up your existing .env file before running this script, then copying the values from backup version into the newly generated .env file.
+```
+
 It will install docker, setup everything (including certs, traefik, PostgreSQL, etc.) and will run docker.
 
 3. Create super user
