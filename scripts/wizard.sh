@@ -35,7 +35,7 @@ DB_PASSWORD=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c24; echo)
 MQ_PASSWORD=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c15; echo)
 ERLANG_COOKIE=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c48; echo)
 
-echo -e "${yel}Generating .env file using randomly generated passwords..."
+echo -e "Generating .env file using randomly generated passwords..."
 
 echo "# [SYSTEM]" > .env
 echo "DOMAIN_NAME=${DNS_DOMAIN}" >> .env
