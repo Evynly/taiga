@@ -29,7 +29,8 @@ read -p "DNS Domain Name:" DNS_DOMAIN
 read -p "Taiga Site Domain Name:" SITE_DOMAIN
 read -p "Cloudflare API Token: (must have edit permissions on the domain name above)" CF_API_TOKEN
 
-
+# These lines are creating random alphanumeric keys/passwords - the lengths can be adjusted and you can replace these with static passwords if desired
+# The build.sh script run at the end (and other scripts that it calls) will be looking for these in the generated .env file
 TAIGA_SECRET_KEY=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c64; echo)
 DB_PASSWORD=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c24; echo)
 MQ_PASSWORD=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c15; echo)
@@ -60,4 +61,6 @@ echo "RABBITMQ_PASS=${MQ_PASSWORD}" >> .env
 echo "RABBITMQ_VHOST=taiga" >> .env
 echo "RABBITMQ_ERLANG_COOKIE=${ERLANG_COOKIE}" >> .env
 
+# We now call the script that kanzitelli created
+# The only thing I created was this file, I modified the instructions in the README file, and I updated the yml to use Cloudflare instead of DigitalOcean for the DNS verification of the certificates
 bash scripts/build.sh
