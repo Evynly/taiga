@@ -37,7 +37,7 @@ ERLANG_COOKIE=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c48; echo)
 
 echo -e "Generating .env file using randomly generated passwords..."
 
-# Change the following line to echo "# [SYSTEM]" >> .env if you'd prefer to append these to an existing .env file rather than overwriting the file
+# Change the following line to echo "# [SYSTEM]" >> .env if you'd prefer to append these to an existing .env file rather than creating or overwriting the file
 echo "# [SYSTEM]" > .env
 echo "DOMAIN_NAME=${DNS_DOMAIN}" >> .env
 echo "CLOUDFLARE_DNS_API_TOKEN=${CF_API_TOKEN}" >> .env
